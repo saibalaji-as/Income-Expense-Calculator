@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    animation: slide-in 0.5s ease-out;
+}
+
+h1 {
+    text-align: center;
+    animation: fade-in 1s ease-in;
+}
+
+.balance, .totals, .controls, .filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls input, .controls button {
+    display: flex;
+    width: calc(50% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.controls button {
+    display: block;
+    cursor: pointer;
+    width: 80px;
+    text-align: center;
+}
+
+.filters label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#entries {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#entries li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+#entries .income {
+    color: green;
+}
+
+#entries .expense {
+    color: red;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .controls input, .controls button {
+        width: calc(100% - 10px);
+    }
+}
