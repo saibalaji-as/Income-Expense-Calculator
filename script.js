@@ -25,7 +25,7 @@ function updateUI() {
         const entryEl = document.createElement('li');
         entryEl.classList.add(entry.amount > 0 ? 'income' : 'expense');
         entryEl.innerHTML = `
-            ${entry.description} <span>${entry.amount > 0 ? '+' : '-'}Rs. ${Math.abs(entry.amount).toFixed(2)}</span>
+            ${entry.description} <span>${entry.amount > 0 ? '+' : '-'}Rs. ${Math.abs(entry.amount)}</span>
             <button onclick="editEntry(${entry.id})">Edit</button>
             <button onclick="deleteEntry(${entry.id})">Delete</button>
         `;
@@ -39,9 +39,9 @@ function updateUI() {
     });
 
     balance = totalIncome + totalExpenses; // totalExpenses is negative
-    balanceEl.textContent = `Rs. ${balance.toFixed(2)}`;
-    totalIncomeEl.textContent = `Rs. ${totalIncome.toFixed(2)}`;
-    totalExpensesEl.textContent = `Rs. ${Math.abs(totalExpenses).toFixed(2)}`;
+    balanceEl.textContent = `Rs. ${balance}`;
+    totalIncomeEl.textContent = `Rs. ${totalIncome}`;
+    totalExpensesEl.textContent = `Rs. ${Math.abs(totalExpenses)}`;
 }
 
 function addEntry(description, amount) {
